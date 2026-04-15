@@ -1,149 +1,337 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JVR Tech Solutions</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>JVR Tech Solutions | Assistência Técnica e Soluções em TI</title>
+
+<meta name="description" content="Manutenção de computadores, notebooks, redes, remoção de vírus, upgrades e suporte técnico em Itaara/RS e região.">
+
+<meta name="keywords" content="assistência técnica itaara, manutenção notebook, formatação pc, técnico informática, redes, suporte TI">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-    background: #050505;
-    color: white;
+html{
+  scroll-behavior:smooth;
 }
 
-/* HEADER */
-header {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
-    url('images/pc-gamer.jpg') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+body{
+  font-family:'Poppins',sans-serif;
+  background:#050505;
+  color:#fff;
+  overflow-x:hidden;
 }
 
-header h1 {
-    font-size: 55px;
-    color: #00bfff;
-    text-shadow: 0 0 20px #00bfff;
+/* NAVBAR */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(0,0,0,.70);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
 
-header p {
-    margin-top: 10px;
-    font-size: 20px;
+.navbar{
+  max-width:1250px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 15px 35px;
-    background: linear-gradient(45deg, #00c853, #00e676);
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
+.logo{
+  font-size:1.4rem;
+  font-weight:700;
+  color:#00bfff;
+  text-shadow:0 0 12px rgba(0,191,255,.45);
 }
 
-.btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #00e676;
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
 }
 
-/* ANIMAÇÃO */
-.hidden {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
+nav a{
+  color:#ddd;
+  text-decoration:none;
+  font-size:.95rem;
+  transition:.3s;
 }
 
-.show {
-    opacity: 1;
-    transform: translateY(0);
+nav a:hover{
+  color:#00bfff;
 }
 
-/* SECTIONS */
-section {
-    padding: 80px 20px;
-    text-align: center;
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:120px 20px 60px;
+  position:relative;
+  overflow:hidden;
 }
 
-h2 {
-    color: #00bfff;
-    margin-bottom: 40px;
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+  linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.92)),
+  url('images/pc-gamer.jpg') center/cover no-repeat;
+  animation:zoomBg 12s ease-in-out infinite alternate;
+  z-index:-1;
 }
 
-/* SERVIÇOS */
-.servicos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+@keyframes zoomBg{
+  from{transform:scale(1);}
+  to{transform:scale(1.08);}
 }
 
-.card {
-    background: #0d0d0d;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: 0.4s;
-    border: 1px solid #111;
+.hero-box{
+  max-width:850px;
 }
 
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+.hero h1{
+  font-size:3.4rem;
+  color:#00bfff;
+  text-shadow:0 0 20px rgba(0,191,255,.6);
 }
 
-.card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 0 20px #00bfff;
+.hero p{
+  margin-top:15px;
+  color:#ddd;
+  font-size:1.15rem;
+  line-height:1.8;
 }
 
-.card p {
-    padding: 15px;
+.hero-badges{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:25px;
+}
+
+.hero-badges span{
+  padding:10px 15px;
+  border-radius:40px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  font-size:.9rem;
+}
+
+.buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700;
+  transition:.3s;
+}
+
+.btn-main{
+  background:linear-gradient(45deg,#00c853,#00e676);
+  color:#fff;
+  box-shadow:0 0 20px rgba(0,230,118,.25);
+}
+
+.btn-main:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 0 25px rgba(0,230,118,.45);
+}
+
+.btn-outline{
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff;
+  background:rgba(255,255,255,.04);
+}
+
+.btn-outline:hover{
+  background:rgba(255,255,255,.08);
+}
+
+/* GERAL */
+section{
+  padding:90px 20px;
+}
+
+.container{
+  max-width:1250px;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.title h2{
+  color:#00bfff;
+  font-size:2rem;
+}
+
+.title p{
+  margin-top:10px;
+  color:#aaa;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:22px;
+  overflow:hidden;
+  transition:.35s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px rgba(0,191,255,.22);
+}
+
+.card img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:20px;
+}
+
+.card-content h3{
+  color:#00bfff;
+  margin-bottom:10px;
+}
+
+.card-content p{
+  color:#ccc;
+  line-height:1.7;
 }
 
 /* DIFERENCIAIS */
-.diferenciais p {
-    margin: 12px 0;
-    font-size: 18px;
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+
+.feature{
+  background:#0c0c0c;
+  border:1px solid #141414;
+  border-radius:18px;
+  padding:25px;
+  text-align:center;
+}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.stat{
+  background:#0b0b0b;
+  border:1px solid #161616;
+  border-radius:18px;
+  padding:30px;
+  text-align:center;
+}
+
+.stat h3{
+  color:#00e676;
+  font-size:2rem;
+}
+
+/* CTA */
+.cta{
+  background:linear-gradient(135deg,#0b0b0b,#111);
+  border:1px solid #1a1a1a;
+  border-radius:25px;
+  padding:40px 25px;
+  text-align:center;
 }
 
 /* CONTATO */
-.contato p {
-    margin: 10px 0;
+.contact-list p{
+  margin:10px 0;
+  color:#ddd;
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25d366;
-    padding: 18px;
-    border-radius: 50%;
-    font-size: 26px;
-    text-decoration: none;
-    color: white;
-    box-shadow: 0 0 15px #25d366;
+/* FLOAT */
+.whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25d366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:#fff;
+  font-size:26px;
+  box-shadow:0 0 18px rgba(37,211,102,.45);
+  z-index:999;
 }
 
 /* FOOTER */
-footer {
-    background: #0a0a0a;
-    padding: 25px;
-    text-align: center;
-    font-size: 14px;
-    border-top: 1px solid #111;
+footer{
+  padding:30px 20px;
+  text-align:center;
+  color:#888;
+  border-top:1px solid #111;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+  .navbar{
+    flex-direction:column;
+  }
+
+  .hero h1{
+    font-size:2.3rem;
+  }
+
+  nav{
+    justify-content:center;
+  }
 }
 </style>
 </head>
@@ -151,86 +339,191 @@ footer {
 <body>
 
 <header>
-    <div class="hidden">
-        <h1>JVR Tech Solutions</h1>
-        <p>Soluções inteligentes em tecnologia</p>
-        <a class="btn" href="https://wa.me/5555999535726" target="_blank">
-            Fale no WhatsApp
-        </a>
-    </div>
+  <div class="navbar">
+    <div class="logo">🚀 JVR Tech Solutions</div>
+
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#vantagens">Vantagens</a>
+      <a href="#numeros">Resultados</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hidden">
-    <h2>Serviços</h2>
+<section class="hero">
+  <div class="hero-box">
+    <h1>Soluções Inteligentes em Tecnologia</h1>
 
-    <div class="servicos">
+    <p>
+      Assistência técnica profissional para computadores, notebooks,
+      redes e suporte em Itaara/RS e região.
+    </p>
 
-        <div class="card">
-            <img src="images/placa-mae.jpg">
-            <p>Manutenção de Hardware</p>
+    <div class="hero-badges">
+      <span>⚡ Atendimento Rápido</span>
+      <span>🔧 Serviço Profissional</span>
+      <span>💰 Preço Justo</span>
+      <span>🛡️ Suporte Confiável</span>
+    </div>
+
+    <div class="buttons">
+      <a class="btn btn-main" href="https://wa.me/5555999535726" target="_blank">
+        Solicitar Orçamento
+      </a>
+
+      <a class="btn btn-outline" href="#servicos">
+        Ver Serviços
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="container">
+
+    <div class="title">
+      <h2>Serviços</h2>
+      <p>Atendimento completo para resolver seus problemas de tecnologia.</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <img src="images/placa-mae.jpg" alt="">
+        <div class="card-content">
+          <h3>Manutenção de Hardware</h3>
+          <p>Diagnóstico, limpeza, troca de peças e correções técnicas.</p>
         </div>
+      </div>
 
-        <div class="card">
-            <img src="images/notebook-jvr.jpg">
-            <p>Formatação de Sistemas</p>
+      <div class="card">
+        <img src="images/notebook-jvr.jpg" alt="">
+        <div class="card-content">
+          <h3>Formatação e Otimização</h3>
+          <p>Sistema rápido, limpo, atualizado e pronto para uso.</p>
         </div>
+      </div>
 
-        <div class="card">
-            <img src="images/rede-cabos.jpg">
-            <p>Configuração de Redes</p>
+      <div class="card">
+        <img src="images/rede-cabos.jpg" alt="">
+        <div class="card-content">
+          <h3>Configuração de Redes</h3>
+          <p>Wi-Fi, roteadores, cabeamento e melhor desempenho da internet.</p>
         </div>
+      </div>
 
-        <div class="card">
-            <img src="images/pc-gamer.jpg">
-            <p>Montagem de Computadores</p>
+      <div class="card">
+        <img src="images/pc-gamer.jpg" alt="">
+        <div class="card-content">
+          <h3>Upgrade Gamer</h3>
+          <p>Montagem, upgrades e performance para jogos e trabalho.</p>
         </div>
+      </div>
 
-        <div class="card">
-            <img src="images/seguranca-digital.jpg">
-            <p>Remoção de Vírus</p>
+      <div class="card">
+        <img src="images/seguranca-digital.jpg" alt="">
+        <div class="card-content">
+          <h3>Remoção de Vírus</h3>
+          <p>Segurança digital, limpeza e proteção dos seus dados.</p>
         </div>
+      </div>
 
-        <div class="card">
-            <img src="images/reparo-placa.jpg">
-            <p>Reparos Técnicos</p>
+      <div class="card">
+        <img src="images/reparo-placa.jpg" alt="">
+        <div class="card-content">
+          <h3>Reparos Técnicos</h3>
+          <p>Correção de falhas, travamentos e problemas avançados.</p>
         </div>
+      </div>
 
     </div>
+  </div>
 </section>
 
-<section class="diferenciais hidden">
-    <h2>Por que escolher a JVR?</h2>
-    <p>🚀 Atendimento rápido</p>
-    <p>🔧 Serviço profissional</p>
-    <p>💰 Preço justo</p>
-    <p>📍 Itaara/RS</p>
+<section id="vantagens">
+  <div class="container">
+
+    <div class="title">
+      <h2>Por que escolher a JVR?</h2>
+      <p>Confiança, velocidade e resultado.</p>
+    </div>
+
+    <div class="features">
+      <div class="feature">🚀 Atendimento rápido e objetivo</div>
+      <div class="feature">🔧 Soluções profissionais</div>
+      <div class="feature">💰 Preço justo</div>
+      <div class="feature">📍 Itaara/RS e região</div>
+      <div class="feature">🛡️ Transparência total</div>
+      <div class="feature">📲 Suporte direto no WhatsApp</div>
+    </div>
+
+  </div>
 </section>
 
-<section class="contato hidden">
-    <h2>Contato</h2>
-    <p>📲 WhatsApp: (55) 99953-5726</p>
-    <p>📷 Instagram: @jvrtechsolutions</p>
+<section id="numeros">
+  <div class="container">
+
+    <div class="title">
+      <h2>Resultados</h2>
+      <p>Compromisso com qualidade e confiança.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <h3>100%</h3>
+        <p>Dedicação em cada atendimento</p>
+      </div>
+
+      <div class="stat">
+        <h3>24h</h3>
+        <p>Resposta rápida no WhatsApp</p>
+      </div>
+
+      <div class="stat">
+        <h3>+Veloz</h3>
+        <p>Equipamentos otimizados</p>
+      </div>
+
+      <div class="stat">
+        <h3>Local</h3>
+        <p>Atendimento regional</p>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/5555999535726" target="_blank">
-💬
-</a>
+<section id="contato">
+  <div class="container">
+
+    <div class="cta">
+      <div class="title">
+        <h2>Precisa Resolver Seu Problema?</h2>
+        <p>Fale agora e solicite um orçamento sem compromisso.</p>
+      </div>
+
+      <div class="buttons">
+        <a class="btn btn-main" href="https://wa.me/5555999535726" target="_blank">
+          Chamar no WhatsApp
+        </a>
+      </div>
+
+      <div class="contact-list" style="margin-top:25px;">
+        <p>📲 WhatsApp: (55) 99953-5726</p>
+        <p>📷 Instagram: @jvrtechsolutions</p>
+        <p>📍 Itaara/RS</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/5555999535726" target="_blank">💬</a>
 
 <footer>
-    © 2026 JVR Tech Solutions | Desenvolvido por JVR Tech Solutions 🚀
+© 2026 JVR Tech Solutions • Presença Digital Profissional
 </footer>
-
-<script>
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
-});
-
-document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
